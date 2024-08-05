@@ -1,0 +1,25 @@
+[project]
+name = "packaging_workshop"
+version = "0.1.0"
+dependencies = [
+    "summerepi2"
+]
+
+[tool.setuptools]
+packages = ["packaging_workshop"]
+
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[tool.black]
+line-length = 100
+
+[tool.pixi.project]
+channels = ["conda-forge"]
+platforms = ["win-64"]
+
+[tool.pixi.pypi-dependencies]
+packaging_workshop = { path = ".", editable = true }
+
+[tool.pixi.tasks]
