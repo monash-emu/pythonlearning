@@ -1,0 +1,27 @@
+[project]
+name = "04Jax"
+version = "0.1.0"
+description = "Add a short description here"
+authors = [{name = "David Shipman", email = "dshipman@gmail.com"}]
+requires-python = ">= 3.11"
+dependencies = [ "jax>=0.4.33,<0.5", "jaxlib>=0.4.33,<0.5"]
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.pixi.project]
+channels = ["conda-forge"]
+platforms = ["win-64"]
+
+[tool.pixi.pypi-dependencies]
+04Jax = { path = ".", editable = true }
+
+[tool.pixi.tasks]
+
+[tool.pixi.dependencies]
+ipykernel = ">=6.29.5,<7"
+pandas = ">=2.2.3,<3"
+matplotlib = ">=3.9.2,<4"
+jupyterlab = ">=4.2.5,<5"
+pixi-kernel = ">=0.4.0,<0.5"
